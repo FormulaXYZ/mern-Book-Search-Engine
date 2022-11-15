@@ -37,7 +37,7 @@ type Mutation {
     title: String,
     image: String,
     link: String):User
-  
+    saveBook($newBook: InputBook!):User
   removeBook(bookId: ID!): User
   
 }
