@@ -58,9 +58,11 @@ const resolvers = {
                     { $pull: { savedBooks: { bookId: bookId } } },
                     { new: true }
                 );
+
                 if (!updatedUser) {
-                    throw new AuthenticationError('could not find user!');
+                    throw new Error('could not find user!');
                 }
+                return updatedUser;
 
             }
             throw new AuthenticationError('You need to be logged in!');
